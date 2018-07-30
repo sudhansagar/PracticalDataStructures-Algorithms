@@ -3,7 +3,7 @@ package ds.stack;
 public class App {
 	
 	public static void main(String[] args) {
-		Stack stackObj = new Stack(2);
+		Stack stackObj = new Stack(4);
 		stackObj.push(10);
 		stackObj.push(20);
 		stackObj.push(30);
@@ -13,6 +13,8 @@ public class App {
 		while(!stackObj.isEmpty()) {
 			System.out.println(stackObj.pop());
 		}
+		
+		//System.out.println(stackObj.pop());
 
 	}
 }

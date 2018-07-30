@@ -13,7 +13,7 @@ public class Stack {
 	}
 
 	public void push(int val) {
-		if(!peak()) {
+		if(!isFull()) {
 			top++;
 			array[top] = val;
 		}else {
@@ -22,16 +22,25 @@ public class Stack {
 	}
 
 	public long pop() {
-		int old_top = top;
-		top--;
-		return array[old_top];
+		if(isEmpty()) {
+			System.out.println("stack is already empty");
+			return -1;
+		}else {
+			int old_top = top;
+			top--;
+			return array[old_top];
+		}
 	}
 
 	public boolean isEmpty() {
 		return (top == -1);
 	}
 	
-	public boolean peak() {
+	public long peakVal() {
+		return array[top];
+	}
+	
+	public boolean isFull() {
 		return (top == maxSize-1); 
 		
 	}	
